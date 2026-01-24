@@ -1,0 +1,377 @@
+:root {
+  /* TGi Brand & iOS Colors */
+  --tgi-red: #ff3b30;
+  --tgi-orange: #ff9500;
+  --tgi-gradient: linear-gradient(135deg, #ff3b30 0%, #ff9500 100%);
+  
+  /* Liquid Glass variables */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --text-dark: #1d1d1f;
+  --text-secondary: #86868b;
+  --ios-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* Base Styles */
+body {
+  background: radial-gradient(circle at top left, #fff5f5 0%, #ffffff 45%, #f7f7f7 100%);
+  background-attachment: fixed;
+  color: var(--text-dark);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Section */
+.header {
+  padding: 60px 20px;
+  text-align: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-bottom: 1px solid var(--glass-border);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.header h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: var(--tgi-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  letter-spacing: -1.5px;
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-top: 12px;
+  font-size: 1.1rem;
+}
+
+/* Navigation Tabs */
+.tab-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 6px;
+  margin: 20px 0 40px 0;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--ios-shadow);
+}
+
+.tab-nav button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+}
+
+.tab-nav button.active {
+  background: white;
+  color: var(--tgi-red);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+/* Content Sections */
+.section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 40px 0 25px 0;
+  color: var(--text-dark);
+  letter-spacing: -0.8px;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 32px;
+  border: 1px solid var(--glass-border);
+  padding: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.04);
+}
+
+/* Layout Grids */
+.group-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  padding: 10px 0;
+}
+
+.match-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  padding: 15px 0;
+}
+
+/* Prize Pool Section */
+.prize-pool-section {
+  margin-top: 80px;
+  margin-bottom: 60px;
+  text-align: center;
+  padding: 20px;
+}
+
+.prize-title {
+  font-size: 2.2rem;
+  color: var(--tgi-red);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+}
+
+.prize-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.prize-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid var(--tgi-red); 
+  border-radius: 28px;
+  padding: 35px 20px;
+  width: 200px;
+  box-shadow: var(--ios-shadow);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prize-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.medal {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.prize-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.amount {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--tgi-red);
+}
+
+.prize-card.consolation {
+  opacity: 0.9;
+}
+
+.prize-card.consolation .amount {
+  color: var(--tgi-red);
+}
+
+/* --- Football Loading Screen --- */
+.loading-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #ffffff 0%, #f2f2f2 100%);
+}
+
+.loader-container {
+  position: relative;
+  width: 100px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ball-loader {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  background-image: 
+    radial-gradient(circle at 50% 50%, #1d1d1f 25%, transparent 26%),
+    radial-gradient(circle at 0% 0%, #1d1d1f 20%, transparent 21%),
+    radial-gradient(circle at 100% 0%, #1d1d1f 20%, transparent 21%),
+    radial-gradient(circle at 100% 100%, #1d1d1f 20%, transparent 21%),
+    radial-gradient(circle at 0% 100%, #1d1d1f 20%, transparent 21%);
+  background-size: 50px 50px;
+  border: 2px solid #1d1d1f;
+  border-radius: 50%;
+  animation: footballBounce 0.6s ease-in-out infinite alternate,
+              footballRotate 1.2s linear infinite;
+  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1);
+}
+
+.ball-shadow {
+  width: 40px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin-top: 15px;
+  animation: shadowScale 0.6s ease-in-out infinite alternate;
+}
+
+.loading-text {
+  margin-top: 25px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: var(--tgi-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.loading-sub {
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Common Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes footballBounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-40px); }
+}
+
+@keyframes footballRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shadowScale {
+  from { transform: scale(1.2); opacity: 0.4; }
+  to { transform: scale(0.5); opacity: 0.1; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header h1 { font-size: 2.2rem; }
+  .section-title { font-size: 1.8rem; }
+  .group-grid { grid-template-columns: 1fr; }
+  .header { padding: 40px 15px; }
+  .prize-card {
+    width: calc(50% - 20px);
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prize-card {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  margin-top: 80px;
+  padding: 40px 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+}
+
+.footer-content p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.dev-credit {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* --- Developer Name Animation Section --- */
+.dev-credit span {
+  /* နာမည်ကို Highlight လုပ်ခြင်း */
+  background: var(--tgi-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  display: inline-block;
+  
+  /* Animation ထည့်သွင်းခြင်း */
+  animation: heartBeat 2s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Mouse တင်လိုက်ရင် နာမည်လေးက ကြီးလာပြီး ပိုလင်းသွားစေရန် */
+.dev-credit span:hover {
+  transform: scale(1.2) rotate(3deg);
+  filter: drop-shadow(0 0 8px rgba(255, 59, 48, 0.4));
+}
+
+/* တဖျတ်ဖျတ်နဲ့ အသက်ရှူနေသလို ဖြစ်ပေါ်စေမည့် Animation */
+@keyframes heartBeat {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Footer ကို ဖုန်းနဲ့ကြည့်ရင်လည်း အဆင်ပြေအောင် ညှိခြင်း */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 15px;
+    margin-top: 50px;
+  }
+  .footer-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+}

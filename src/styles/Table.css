@@ -1,0 +1,81 @@
+.futsal-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 15px;
+}
+
+.futsal-table th {
+  color: #8e8e93; /* iOS Secondary Label color */
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+.futsal-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  transition: background 0.3s ease;
+}
+
+/* Team Name Style */
+.team-name {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Clickable Team Interaction */
+.clickable-team {
+  cursor: pointer;
+  color: var(--tgi-red) !important; /* အသင်းနာမည်ကို အနီရောင်ပေးထားမယ် */
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.clickable-team:hover {
+  opacity: 0.7;
+  transform: translateX(4px); /* iOS-style subtle indent on hover */
+  text-decoration: none;
+}
+
+/* ထိပ်ဆုံး ၂ သင်း (Qualification Zone) ကို အမှတ်အသားပြုခြင်း */
+.top-two {
+  background: rgba(255, 59, 48, 0.04);
+}
+
+.top-two td:first-child {
+  border-left: 4px solid var(--tgi-red);
+  /* Rounded corners for the indicator */
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/* Last Row Border Removal */
+.futsal-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Table Row Hover (Subtle) */
+.futsal-table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+/* Points column ကို bold ပိုလုပ်မယ် */
+.futsal-table td:last-child {
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+@media (max-width: 480px) {
+  .futsal-table td, .futsal-table th {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+}

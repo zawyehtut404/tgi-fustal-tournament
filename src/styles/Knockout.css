@@ -1,0 +1,120 @@
+.knockout-wrapper {
+  display: flex;
+  justify-content: flex-start; 
+  padding: 60px 40px;
+  overflow-x: auto;
+  background-color: #fcfcfc;
+  min-height: 100vh;
+}
+
+.bracket-column {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.stage-title {
+  text-align: center;
+  font-weight: 800;
+  color: #ff3b30;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.matches-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.match-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.match-item .card-wrapper {
+  width: 100%;
+  max-width: 260px;
+  z-index: 10;
+  position: relative;
+  margin-left: 20px;
+}
+
+/* --- Bracket Lines Logic --- */
+.bracket-column:not(:last-child) .match-item::after {
+  content: "";
+  position: absolute;
+  left: 280px; 
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background-color: #ced4da;
+}
+
+/* Final Column ဆီသို့ ဝင်လာမည့် လိုင်းညှိချက် */
+.sf .match-item::before, 
+.f .match-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background-color: #ced4da;
+}
+
+.vertical-connector {
+  position: absolute;
+  left: 300px; 
+  width: 2px;
+  background-color: #ced4da;
+  z-index: 5;
+}
+
+.qf-connector { height: calc(50% + 55px); }
+.sf-connector { height: calc(50% + 140px); }
+.top-line { top: 50%; }
+.bottom-line { bottom: 50%; }
+
+/* --- Finals Stage Formatting (Card များကို အောက်သို့ နှိမ့်ချခြင်း) --- */
+.match-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 31.5px;
+  
+  /* စာတန်းပါလာသဖြင့် Card နေရာလွဲသွားသည်ကို margin-top နှင့် ပြန်ညှိသည် */
+  /* ပုံထဲကအတိုင်းဆိုလည်ခနစပမညမညမညမညမညမညမညမညမညမညမညမညမညမညမညမညမညမည */
+  margin-top: 0.001px; 
+}
+
+.mini-label {
+  width: 260px; 
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+  background: transparent;
+}
+
+.label-text {
+  background: #ff3b30;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Scrollbar Customization */
+.knockout-wrapper::-webkit-scrollbar { height: 8px; }
+.knockout-wrapper::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
