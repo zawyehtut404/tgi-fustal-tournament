@@ -23,7 +23,7 @@ const MatchCard = ({ match, homeTeam, awayTeam, onTeamClick }) => {
           onClick={() => onTeamClick(match.homeId)}
           title="View Team Details"
         >
-          <span className="team-name">{homeTeam?.name || 'TBD'}</span>
+          <span className="team-name">{homeTeam?.name || 'TGi'}</span>
         </div>
         
         {/* ၄။ Score Display Area */}
@@ -41,7 +41,7 @@ const MatchCard = ({ match, homeTeam, awayTeam, onTeamClick }) => {
           onClick={() => onTeamClick(match.awayId)}
           title="View Team Details"
         >
-          <span className="team-name">{awayTeam?.name || 'TBD'}</span>
+          <span className="team-name">{awayTeam?.name || 'TGi'}</span>
         </div>
       </div>
 

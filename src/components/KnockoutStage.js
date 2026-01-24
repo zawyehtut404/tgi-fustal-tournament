@@ -45,7 +45,7 @@ const KnockoutStage = ({ knockoutMatches = [], allTeams = [], onTeamClick }) => 
           {filterByStage('Quarter-final').length > 0 ? (
             filterByStage('Quarter-final').map((m, i) => renderMatch(m, i, "qf"))
           ) : (
-            <div className="no-data">TBD</div>
+            <div className="no-data">TGi</div>
           )}
         </div>
       </div>
@@ -57,7 +57,7 @@ const KnockoutStage = ({ knockoutMatches = [], allTeams = [], onTeamClick }) => 
           {filterByStage('Semi-final').length > 0 ? (
             filterByStage('Semi-final').map((m, i) => renderMatch(m, i, "sf"))
           ) : (
-            <div className="no-data">TBD</div>
+            <div className="no-data">TGi</div>
           )}
         </div>
       </div>
