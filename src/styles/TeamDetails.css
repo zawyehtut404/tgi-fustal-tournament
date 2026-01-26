@@ -5,14 +5,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.4); /* iOS Light Blur Style */
+  background: rgba(0, 0, 0, 0.4); 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 2000;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
   animation: fadeIn 0.3s ease-out;
 }
 
@@ -20,53 +20,29 @@
 .team-modal {
   width: 100%;
   max-width: 900px;
-  max-height: 85vh;
-  background: rgba(255, 255, 255, 0.85);
+  max-height: 90vh; /* မျက်နှာပြင်ရဲ့ ၉၀% ထက် မကျော်စေရန် */
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 28px;
-  padding: 30px;
   position: relative;
   overflow: hidden; 
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* ၃။ Close Button */
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  border: none;
-  background: rgba(0, 0, 0, 0.05);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s;
-  z-index: 10;
-}
-
-.close-btn:hover {
-  background: #ff3b30;
-  color: white;
-  transform: rotate(90deg);
-}
-
-/* ၄။ Modal Header Area */
+/* ၃။ Modal Header (အသင်းနာမည်ကို fixed ထားရန်) */
 .modal-header {
+  padding: 25px 20px 15px;
   text-align: center;
-  margin-bottom: 25px;
+  flex-shrink: 0; /* Header ကို အရွယ်အစား မပြောင်းစေရန် */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .team-badge {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #ff3b30, #ff9500); /* TGi Red Gradient */
+  background: linear-gradient(135deg, #ff3b30, #ff9500);
   border-radius: 20px;
   margin: 0 auto 12px;
   display: flex;
@@ -78,55 +54,33 @@
   box-shadow: 0 10px 20px rgba(255, 59, 48, 0.2);
 }
 
-.group-tag {
-  background: rgba(255, 59, 48, 0.1);
-  color: #ff3b30;
-  padding: 4px 14px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 0.85rem;
+/* ၄။ Content Wrapper (Scroll ဆွဲမည့်အပိုင်း) */
+.modal-content-wrapper {
+  flex: 1;
+  overflow-y: auto; /* ဖုန်းမှာရော PC မှာရော scroll ရစေရန် */
+  padding: 20px 30px;
+  -webkit-overflow-scrolling: touch; /* iOS Smooth Scroll */
 }
 
-/* ၅။ Grid Layout (Squad vs History) */
+/* ၅။ Grid Layout */
 .modal-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 30px;
-  flex: 1;
-  overflow: hidden; /* အတွင်းထဲက scroll ကိုပဲ သုံးမယ် */
-}
-
-.squad-section, .history-section {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
 }
 
 .modal-grid h3 {
   font-size: 1.1rem;
   margin-bottom: 15px;
   color: #1d1d1f;
-  padding-left: 5px;
+  padding-left: 10px;
   border-left: 4px solid #ff3b30;
 }
 
-/* ၆။ Scrolling Logic (၁၈ ယောက်စာရင်းအတွက် အရေးကြီးဆုံး) */
-.players-scroll, .history-scroll {
-  flex: 1;
-  overflow-y: auto;
-  padding-right: 10px;
-}
-
-/* Scrollbar ကို iOS Style အတိုင်း ကျဉ်းကျဉ်းလေး လုပ်ခြင်း */
-.players-scroll::-webkit-scrollbar, 
-.history-scroll::-webkit-scrollbar {
-  width: 4px;
-}
-
-.players-scroll::-webkit-scrollbar-thumb, 
-.history-scroll::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+/* ၆။ Scrolling Area (PC အတွက် သီးသန့် scroll) */
+.players-list, .history-list {
+  display: flex;
+  flex-direction: column;
 }
 
 /* ၇။ Player Row Styling */
@@ -169,31 +123,54 @@
   letter-spacing: 0.5px;
 }
 
-/* ၈။ Animations */
+/* ၈။ Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 100;
+}
+
+.close-btn:hover {
+  background: #ff3b30;
+  color: white;
+  transform: rotate(90deg);
+}
+
+/* ၉။ Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
 
-/* ၉။ Responsive for Mobile (ဖုန်းနဲ့ကြည့်ရင် တစ်ခုစီ အပေါ်အောက် ပြမယ်) */
+/* ၁၀။ Mobile Responsive */
 @media (max-width: 768px) {
   .team-modal {
-    padding: 20px;
-    height: 95vh;
+    max-height: 85vh;
+    padding: 0; /* Header နဲ့ Wrapper ခွဲထားလို့ padding ဖြုတ်လိုက်သည် */
   }
   
   .modal-grid {
     grid-template-columns: 1fr;
-    overflow-y: auto;
     gap: 40px;
   }
-  
-  .players-scroll, .history-scroll {
-    overflow-y: visible; /* ဖုန်းမှာတော့ grid scroll ကိုပဲ သုံးမယ် */
-    max-height: none;
-  }
 
+  .modal-content-wrapper {
+    padding: 15px 20px 30px;
+  }
+  
   .modal-header h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
