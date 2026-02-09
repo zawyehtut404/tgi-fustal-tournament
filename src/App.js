@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   // Sheet.best API URL
-  const API_BASE_URL = "https://api.sheetbest.com/sheets/59acc44f-9dc1-4af2-87dd-5d454f3ae2e8";
+  const API_BASE_URL = "https://api.sheetbest.com/sheets/6bd5f6c4-f1b7-461f-a444-a343b2aad866";
 
   useEffect(() => {
     const fetchTournamentData = async () => {
