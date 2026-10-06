@@ -5,7 +5,7 @@ const GroupTable = ({ groupName, teams, matches, onTeamClick }) => {
   
   // Logic: အမှတ်တွက်ချက်ခြင်း
   const calculateStats = (teamId) => {
-    let stats = { mp: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 };
+    let stats = { mp: 0, w: 0, d: 0, 0: 0, gf: 0, ga: 0, gd: 0, pts: 0 };
 
     matches.forEach(match => {
       // ပွဲရလဒ် ရှိမရှိ စစ်ဆေးခြင်း
