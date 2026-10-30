@@ -115,7 +115,7 @@ function App() {
             <div className="prize-card third-place">
               <div className="medal">🥉</div>
               <h3>3rd Place</h3>
-              <p className="amount">600,000 MMK</p>
+              <p className="amount">500,000 MMK</p>
             </div>
 
             <div className="prize-card consolation">
