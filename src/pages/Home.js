@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import GroupTable from '../components/GroupTable';
 import MatchCard from '../components/MatchCard';
 import KnockoutStage from '../components/KnockoutStage';
 import TeamDetails from '../components/TeamDetails';
@@ -22,10 +21,6 @@ const Home = ({ allTeams, allMatches, allPlayers, loading }) => {
     );
   }
 
-  const getTeamsByGroup = (groupName) => {
-    return allTeams.filter(team => team.group === groupName);
-  };
-
   // Stage အလိုက် matches များကို ခွဲထုတ်ခြင်း
   const groupStageMatches = allMatches.filter(m => m.stage === 'Group Stage');
   const knockoutMatches = allMatches.filter(m => m.stage !== 'Group Stage');
@@ -46,12 +41,6 @@ const Home = ({ allTeams, allMatches, allPlayers, loading }) => {
           onClick={() => setActiveTab('fixtures')}
         >
           Fixtures
-        </button>
-        <button 
-          className={activeTab === 'standings' ? 'active' : ''} 
-          onClick={() => setActiveTab('standings')}
-        >
-          Standings
         </button>
         <button 
           className={activeTab === 'knockout' ? 'active' : ''} 
@@ -82,24 +71,6 @@ const Home = ({ allTeams, allMatches, allPlayers, loading }) => {
                 No fixtures available.
               </p>
             )}
-          </div>
-        </section>
-      )}
-
-      {/* Standings Tab */}
-      {activeTab === 'standings' && (
-        <section className="section fade-in">
-          <h2 className="section-title">Group Stage Standings</h2>
-          <div className="group-grid">
-            {['A', 'B', 'C', 'D'].map(groupLabel => (
-              <GroupTable 
-                key={groupLabel}
-                groupName={groupLabel} 
-                teams={getTeamsByGroup(groupLabel)} 
-                matches={groupStageMatches} 
-                onTeamClick={handleTeamClick} 
-              />
-            ))}
           </div>
         </section>
       )}
