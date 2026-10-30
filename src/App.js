@@ -103,13 +103,13 @@ function App() {
             <div className="prize-card champion">
               <div className="medal">🥇</div>
               <h3>Champion</h3>
-              <p className="amount">1500,000 MMK</p>
+              <p className="amount">1,500,000 MMK</p>
             </div>
             
             <div className="prize-card runner-up">
               <div className="medal">🥈</div>
               <h3>Runner-up</h3>
-              <p className="amount">800,000 MMK</p>
+              <p className="amount">1,000,000 MMK</p>
             </div>
             
             <div className="prize-card third-place">
