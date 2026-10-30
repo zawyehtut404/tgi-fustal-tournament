@@ -3,7 +3,6 @@ import MatchCard from './MatchCard';
 import '../styles/Knockout.css';
 
 const KnockoutStage = ({ knockoutMatches = [], allTeams = [], onTeamClick }) => {
-  
   const filterByStage = (stage) => (knockoutMatches || []).filter(m => m.stage === stage);
 
   const renderMatch = (match, index, stageClass) => {
@@ -37,7 +36,7 @@ const KnockoutStage = ({ knockoutMatches = [], allTeams = [], onTeamClick }) => 
 
   return (
     <div className="knockout-wrapper">
-      
+
       {/* Quarter-finals Column */}
       <div className="bracket-column qf">
         <h3 className="stage-title">Quarter-finals</h3>
