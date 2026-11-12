@@ -53,7 +53,7 @@ const Home = ({ allTeams, allMatches, allPlayers, loading }) => {
       {/* Fixtures Tab */}
       {activeTab === 'fixtures' && (
         <section className="section fade-in">
-          <h2 className="section-title">Today's Fixtures</h2>
+          <h2 className="section-title">Fixtures</h2>
           <div className="match-list">
             {groupStageMatches.length > 0 ? (
               groupStageMatches.map(match => (
