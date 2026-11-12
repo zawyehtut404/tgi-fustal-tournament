@@ -60,7 +60,7 @@ const MatchCard = ({ match, homeTeam, awayTeam, onTeamClick }) => {
         
         <div className="footer-bottom">
           <div className="match-group">
-            {match.group ? `• Group ${match.group}` : '• Round Of 16 Stage'}
+            {match.group ? `• Group ${match.group}` : '• '}
           </div>
           {match.location && (
             <div className="match-location">{match.location}</div>
