@@ -170,6 +170,7 @@
 .match-location {
   font-size: 0.85rem;
   color: #34c759; /* ပုံထဲကအတိုင်း အစိမ်းရောင် */
+  padding: 4px 10px;
   font-weight: 600;
   text-align: right;
 }
