@@ -133,7 +133,7 @@ function App() {
         <div className="footer-content">
           <p>© 2026 TGI Japanese Language School. All rights reserved.</p>
           <div className="dev-credit">
-            Developed By <span>Htut</span>
+            Developed By <span>Ko Htut</span>
           </div>
         </div>
       </footer>
